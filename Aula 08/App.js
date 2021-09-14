@@ -4,8 +4,7 @@ import {
   Text,
   StyleSheet,
   Image,
-  TouchableOpacity,
-  TouchableOpacityBase,
+  TouchableOpacity
 } from 'react-native';
 
 class App extends Component{
@@ -18,21 +17,21 @@ class App extends Component{
     ultimo:null
     };
     
-    //Variavel do timer do relogio
-    this.timer = null;
+    //Variavel do stlNumerocronometro do relogio
+    this.stlNumerocronometro = null;
     this.vai = this.vai.bind(this);
     this.limpar = this.limpar.bind(this);
   }
 
   vai(){
 
-    if(this.timer !=null){
-    //Aqui vai parar o timer
-    clearInterval(this.timer);
-    this.timer=null;
+    if(this.stlNumerocronometro !=null){
+    //Aqui vai parar o stlNumerocronometro
+    clearInterval(this.stlNumerocronometro);
+    this.stlNumerocronometro=null;
   }else{
-//Começa a girar o timer 
-  this.timer = setInterval(() => {
+//Começa a girar o stlNumerocronometro 
+  this.stlNumerocronometro = setInterval(() => {
         this.setState({numero: this.state.numero+0.1});
       }, 100);
 
@@ -42,9 +41,9 @@ class App extends Component{
 
   limpar(){
 
-    if(this.timer!=null){
-      clearInterval(this.timer);
-      this.timer=null;
+    if(this.stlNumerocronometro!=null){
+      clearInterval(this.stlNumerocronometro);
+      this.stlNumerocronometro=null;
     }
     this.setState({
       ultimo: this.state.numero,
@@ -62,7 +61,7 @@ class App extends Component{
       style={styles.cronometro}
       />
 
-      <Text style={styles.timer}>{this.state.numero.toFixed(1)}</Text>
+      <Text style={styles.stlNumerocronometro}>{this.state.numero.toFixed(1)}</Text>
 
       <View style={styles.btnArea}>
 
@@ -94,7 +93,7 @@ const styles = StyleSheet.create({
     justifyContent:'center',
     backgroundColor:'#6495ED'
   },
-  timer:{
+  stlNumerocronometro:{
     marginTop:-150,
     color: '#FFF',
     fontSize:65,
