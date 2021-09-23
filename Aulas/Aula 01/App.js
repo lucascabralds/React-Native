@@ -19,9 +19,7 @@ class App extends Component{
           source={{ uri: img }}
           style={{ width: 300, height: 300 }}
         />
-
         <Text style={{ fontSize: 30 }}> {nome} </Text>
-
       </View>
     );
   }
