@@ -13,6 +13,35 @@ class Lista extends Component{
       feed: this.props.data
     };
     this.mostraLikes=this.mostraLikes.bind(this);
+    this.like=this.like.bind(this);
+    this.carregaIcone=this.carregaIcone.bind(this);
+  }
+
+  carregaIcone(likeada){
+    return likeada ? require('../img/likeada.png') : 
+                     require('../img/like.png')
+  }
+
+  like(){
+    let feed = this.state.feed;
+
+    if(feed.likeada ===true){
+      this.setState({
+        feed:{
+          ...feed,
+          likeada:false,
+          likers:feed.likers-1
+        }
+      });
+    }else{
+      this.setState({
+        feed:{
+          ...feed,
+          likeada:true,
+          likers:feed.likers+1
+          }
+        });
+    }
   }
 
   mostraLikes(likers){
@@ -48,9 +77,9 @@ class Lista extends Component{
             source={{uri: this.state.feed.imgPublicacao}}/>
         
       <View style={styles.areaBtn}>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={this.like}>
           <Image
-                source={require('../img/like.png')}
+                source={this.carregaIcone(this.state.feed.likeada)}
                 style={styles.iconelike}/>
         </TouchableOpacity>
 
