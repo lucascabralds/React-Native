@@ -6,8 +6,6 @@ import {
   View,
   FlatList,
   Image,
-  
-  
 } from 'react-native';
 
 import Lista from './src/Lista/index.js'
