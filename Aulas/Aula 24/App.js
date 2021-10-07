@@ -3,8 +3,7 @@ import {
   StyleSheet,
   Text,
   View,
-  Animated
-} from 'react-native';
+  Animated } from 'react-native';
 
 export default class App extends Component{
 
@@ -16,7 +15,6 @@ constructor(props){
 
   };
 
-
   Animated.timing(
     this.state.AltAnimada,
     
@@ -26,6 +24,14 @@ constructor(props){
     }
   ).start();
 
+  Animated.timing(
+    this.state.LarAnimada,
+    
+    {
+      toValue:250,
+      duration:1000
+    }
+  ).start();
 
   }
   render(){
