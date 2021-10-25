@@ -36,8 +36,6 @@ constructor(props){
       ])
 
     ).start();
-
-
   }
   render(){
 
