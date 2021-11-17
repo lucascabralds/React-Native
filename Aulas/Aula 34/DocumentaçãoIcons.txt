@@ -1,0 +1,9 @@
+Link da documentação
+
+- https://github.com/oblador/react-native-vector-icons
+
+Veja todos os icones:
+
+- https://oblador.github.io/react-native-vector-icons/
+
+* Somando todos os pacotes que a biblioteca tem deve possuir mais o menos 10 Mil Icons.
